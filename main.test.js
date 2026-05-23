@@ -1,4 +1,4 @@
-import { calculator, capitalizeFirst, reverseString, sum } from "./main.js";
+import { caesarCipher, calculator, capitalizeFirst, reverseString, sum } from "./main.js";
 
 test("sum 2 digits", () => {
     expect(sum(10, 10)).toBe(20);
@@ -42,4 +42,17 @@ test("multiplication", () => {
 
 test("division", () => {
     expect(calculator.divide(2, 2)).toBe(1);
+})
+
+
+test("basic cypher test", () => {
+    expect(caesarCipher("xyzXYZ", 3)).toBe("abcABC");
+})
+
+test("mixed case test", () => {
+    expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+})
+
+test("non-alphabet mixed char test", () => {
+    expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 })
